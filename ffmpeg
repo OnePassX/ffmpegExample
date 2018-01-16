@@ -1,3 +1,26 @@
 # ffmpegExample
 ffmpeg使用命令
-ffmpe g -c：v libx264 -g 1
+常用格式：如果不使用-f和格式，文件自动延续使用输入文件的格式
+ffmpeg -i [输入文件名] [参数选项] -f [格式] [输出文件]
+
+#解释：ffmpeg命令 -i设定输入流 ss.mp4指定文件 -c:v libx264 表示视频格式 -g关键帧间距 1大小 output.mp4输出文件
+ffmpeg -i input.mp4 -c:v libx264 -g 1 output.mp4
+
+#解释：-r设定帧速率 -s设定分辨率
+ffmpeg -i input.mp4 -r 25 -s 1920*1080 output.mp4 
+
+#解释：-vcode编码方式,将视频变h264编码的MP4视频
+ffmpeg -i input.mp4 -vcodec h264 output.mp4
+ffmpeg -i input.mp4 -c:v libx264 output.mp4
+
+#解释：从视频中提取音频
+ffmpeg -i test.mp4 -vn music.mp3
+
+#解释：用-r参数设置频率
+ffmpeg -i input.mp4 -r fps output.mp4
+
+#解释：用-b参数设置码率
+ffmpeg -i input.mp4 -b 1.5M output.mp4
+
+#解释：-b:a表示音频码率,-b:v表示视频码率
+ffmpeg -i input.avi -b:v 1500k output.mp4
