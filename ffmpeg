@@ -1,0 +1,3 @@
+# ffmpegExample
+ffmpeg使用命令
+ffmpe g -c：v libx264 -g 1
