@@ -24,3 +24,6 @@ ffmpeg -i input.mp4 -b 1.5M output.mp4
 
 #解释：-b:a表示音频码率,-b:v表示视频码率
 ffmpeg -i input.avi -b:v 1500k output.mp4
+
+##截取视频帧
+ffmpeg -i input.mp4 -vframes 1 -f image2 image2.jpeg
